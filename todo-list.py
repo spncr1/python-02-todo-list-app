@@ -21,11 +21,11 @@ while True:
         print()
         print("--- REMOVE A TASK ---")
         remove_task = int(input("Which task would you like to remove? "))
-        if remove_task > 0 & remove_task < len(todo_list): # still don't understand how this works really
+        if 0 <= remove_task < len(todo_list): # still don't understand how this works really
             todo_list.pop(remove_task) # probably need a bit more clarification on this too
+            print(f"{remove_task} was successfully removed.")
         else:
             print("That task number doesn't exist on your todo list.")
-        print(f"{remove_task} was successfully removed.")
         print("---------------------")
     elif choice == 3:
         print("--- CLEAR TODO LIST ---")
@@ -35,7 +35,7 @@ while True:
     elif choice == 4:
         print()
         print("--- YOUR TODO LIST ---")
-        for i, task in enumerate(todo_list, start=0): # still need to understand how this works
+        for i, task in enumerate(todo_list, start=1): # still need to understand how this works
             print(f"{i}. {task}") # this prints the task at each iteration in order based on when it was added to the todo_list
         print("----------------------")
     elif choice == 5:
